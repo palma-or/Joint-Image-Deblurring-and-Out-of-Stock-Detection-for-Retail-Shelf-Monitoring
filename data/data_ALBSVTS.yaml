@@ -1,0 +1,7 @@
+path: /cache/porlando/oos_orlando/dataset
+train: train_alb_senza_video/images
+val:   val/images
+test:  test/images
+
+nc: 1
+names: ['empty']
