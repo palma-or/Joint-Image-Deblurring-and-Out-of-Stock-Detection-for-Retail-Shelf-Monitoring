@@ -1,0 +1,35 @@
+
+============================================================
+  ANALISI ERRORI — oos_detector_only_store-Aug
+  conf≥0.25   IoU>0 (qualsiasi sovrapposizione)
+============================================================
+
+  GT totali:   12215
+  FN totali:   4361
+  FNR = FN/GT: 0.3570  (35.70%)
+  FP totali:   856
+  FPPI:        0.362
+
+  ── FALSI POSITIVI per categoria ──────────────
+  Categoria                 N      %FP  Descrizione
+  ──────────────────── ────── ────────  ──────────────────────────────
+  dark_region             320    37.4%  Zona nera / bordo scaffale
+  motion_blur             144    16.8%  Blur da movimento camera
+  occupied_shelf           14     1.6%  Zona con prodotti sullo scaffale
+  refrigerator              1     0.1%  Cella frigo / sfondo freddo
+  other_fp                377    44.0%  Altro
+
+  ── FALSI NEGATIVI per categoria ──────────────
+  Categoria                 N      %FN  Descrizione
+  ──────────────────── ────── ────────  ──────────────────────────────
+  small_box              2556    58.6%  GT box troppo piccola (<32px lato)
+  dark_fn                1035    23.7%  Zona d'ombra / illuminazione bassa
+  low_contrast            101     2.3%  Scaffale poco contrastato
+  occluded                  2     0.0%  Box parzialmente occlusa da altra GT
+  other_fn                667    15.3%  Altro
+
+  Soglie euristiche usate:
+    THR_DARK=40  THR_BLUR=50  THR_CONTRAST=200
+    THR_SMALL_PX=32  THR_SAT_HIGH=40  THR_TEXTURE=400
+    THR_OCC=0.3  THR_REFRIG_B=0.38
+============================================================
